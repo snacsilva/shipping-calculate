@@ -13,7 +13,7 @@ Your goal is to develop a system to calculate the shipping cost for products of 
 
 To populate the database, another system will call the API informing the distance (in kilometers) between *origin* and *destination* of two distribution points. For example:
 ```
-POST /distance
+POST /distances
 A B 10
 ```
 ```
