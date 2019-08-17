@@ -17,11 +17,11 @@ POST /distances
 A B 10
 ```
 ```
-POST /distance
+POST /distances
 B C 15
 ```
 ```
-POST /distance
+POST /distances
 A C 30
 ```
 
