@@ -3,7 +3,7 @@ class CreateDistances < ActiveRecord::Migration[6.0]
     create_table :distances do |t|
       t.string :origin
       t.string :destination
-      t.float :distance
+      t.float :extension
 
       t.timestamps
     end

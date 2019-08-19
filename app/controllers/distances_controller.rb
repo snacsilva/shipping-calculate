@@ -39,6 +39,6 @@ class DistancesController < ApplicationController
     end
 
     def distance_params
-      params.require(:distance).permit(:origin, :destination, :distance)
+      params.require(:distance).permit(:origin, :destination, :extension)
     end
 end
