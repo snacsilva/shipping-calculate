@@ -12,7 +12,12 @@ class DistancesController < ApplicationController
   end
 
   def create
-    @distance = Distance.new(distance_params)
+    @distance = Distance.find_by(origin: distance_params[:origin], destination: distance_params[:destination])
+    if @distance
+      @distance.update_attributes(distance_params)
+    else
+      @distance = Distance.new(distance_params)
+    end
 
     if @distance.save
       render json: @distance, status: :created, location: @distance
