@@ -3,7 +3,7 @@ class DistancesController < ApplicationController
   def create
     @distance = Distance.find_by(origin: distance_params[:origin], destination: distance_params[:destination])
     if @distance
-      @distance.update_attributes(distance_params)
+      @distance.update(distance_params)
     else
       @distance = Distance.new(distance_params)
     end
