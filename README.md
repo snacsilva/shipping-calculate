@@ -13,22 +13,39 @@ Your goal is to develop a system to calculate the shipping cost for products of 
 
 To populate the database, another system will call the API informing the distance (in kilometers) between *origin* and *destination* of two distribution points. For example:
 ```
-POST /distances
-A B 10
+POST /distance
+{
+	"origin":"A",
+	"destination":"B",
+	"extension":10
+}
 ```
 ```
-POST /distances
-B C 15
+POST /distance
+{
+	"origin":"B",
+	"destination":"C",
+	"extension":15
+}
 ```
 ```
-POST /distances
-A C 30
+POST /distance
+{
+	"origin":"A",
+	"destination":"C",
+	"extension":30
+}
 ```
 
 In a second moment, the shopping system will call the API informing the total weight of the order, the source and destination points. The system should return the lowest shipping cost, using the formula: `cost = distance * weight * 0.15`. For example:
 
 ```
-GET /cost?origin=A&destination=C&weight=5
+GET /cost
+{
+	"origin":"A",
+	"destination":"C",
+	"weight":5
+}
 18.75
 ```
 
